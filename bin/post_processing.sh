@@ -36,7 +36,7 @@ echo "Going to use " $weight_path
 echo $suffix
 for i in $layers
 do
-  if [ "cnn" = mode ]
+  if [ "cnn"x = "$mode"x ]
   then
     ~/code/util/bin/visualize.py $weight_path -l $i
   else
