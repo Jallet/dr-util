@@ -8,7 +8,7 @@ def argparser():
     parser.add_argument("path")
     parser.add_argument("-t", "--title",
             help = "title of figure", 
-            action = "store", default = "data")
+            action = "store", default = "")
     return parser
 
 parser = argparser()
@@ -24,6 +24,8 @@ if data.ndim == 2:
     # norm = plt.colors.Normalize(vmin=0)
     plt.imshow(data, cmap = cmap)
 else:
+    if "" == title:
+        title = path
     plt.plot(data)
     plt.legend()
     plt.grid(True)
